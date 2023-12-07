@@ -1,0 +1,7 @@
+@CurrencyWatcher.Server_HostAddress = http://localhost:5018
+
+GET {{CurrencyWatcher.Server_HostAddress}}/api/currencies/
+Accept: application/json
+###
+GET {{CurrencyWatcher.Server_HostAddress}}/api/currencies/34/rate?date=5-12-2023
+Accept: application/json

@@ -1,0 +1,25 @@
+<div class="card mb-5">
+  <div class="card-body p-sm-5">
+    <h2 class="text-center mb-4">Select currency and date</h2>
+    <form *ngIf="currencyForm" [formGroup]="currencyForm" (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <select formControlName="currency" id="currency" class="form-control">
+          <option [value]="null" disabled>Select currency</option>
+          <option *ngFor="let currency of currencies" [value]="currency.id">
+            {{ currency.currencyCode }}
+          </option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <input type="date" formControlName="date" id="date" class="form-control"/>
+      </div>
+      <div>
+        <button type="submit" class="btn btn-primary d-block w-100" [disabled]="!currencyForm.valid">Get Exchange Rate</button>
+      </div>
+      <div *ngIf="rate" class="text-center p-4">
+          <h6 class="text-uppercase text-muted">Exchange Rate is:</h6>
+          <h4 class="display-4 fw-bold">{{ rate }}</h4>
+      </div>
+    </form>
+  </div>
+</div>
