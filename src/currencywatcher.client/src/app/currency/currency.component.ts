@@ -28,9 +28,11 @@ export class CurrencyComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.currenciesSubscription.unsubscribe();
-    if (this.rateSubscription)
-    {
+    if (this.currenciesSubscription) {
+      this.currenciesSubscription.unsubscribe();
+    }
+
+    if (this.rateSubscription) {
       this.rateSubscription.unsubscribe();
     }
   }

@@ -2,7 +2,7 @@
 
 namespace CurrencyWatcher.CurrencyLoader
 {
-    internal class CurrenciesExchangeRatesParser : ICurrenciesExchangeRatesParser
+    public class CurrenciesExchangeRatesParser : ICurrenciesExchangeRatesParser
     {
         public Currency[] ParseCurrenciesExchangeRates(Stream currenciesStream)
         {
